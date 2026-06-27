@@ -207,6 +207,192 @@
   75%, 100% { opacity: 0; }
 }
 
+/* ---- 10 CRY ---- */
+.ef-cry .ef-tear {
+  animation: ef-cry-drop 2.4s ease-in infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.ef-cry .ef-tear-r { animation-delay: 1.2s; }
+@keyframes ef-cry-drop {
+  0%        { transform: translateY(0); opacity: 1; }
+  65%, 100% { transform: translateY(22px); opacity: 0; }
+}
+
+/* ---- 11 THINK ---- */
+.ef-think .ef-dot {
+  opacity: 0;
+  animation: ef-think-pop 2.6s ease-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.ef-think .ef-dot-b { animation-delay: 0.5s; }
+.ef-think .ef-dot-c { animation-delay: 1s; }
+@keyframes ef-think-pop {
+  0%, 80%, 100% { opacity: 0; transform: scale(0.5); }
+  35%, 60%      { opacity: 1; transform: scale(1); }
+}
+
+/* ---- 12 COOL ---- */
+.ef-cool-wrap {
+  animation: ef-cool-bob 3.2s ease-in-out infinite;
+  transform-origin: 60px 60px;
+}
+@keyframes ef-cool-bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-5px) rotate(3deg); }
+}
+
+/* ---- 13 DIZZY ---- */
+.ef-dizzy-wrap {
+  animation: ef-dizzy-wob 0.45s ease-in-out infinite;
+  transform-origin: 60px 60px;
+}
+@keyframes ef-dizzy-wob {
+  0%, 100% { transform: rotate(-5deg); }
+  50%      { transform: rotate(5deg); }
+}
+.ef-dizzy-wrap .ef-star {
+  animation: ef-star-pop 1.8s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.ef-dizzy-wrap .ef-star-b { animation-delay: 0.9s; }
+@keyframes ef-star-pop {
+  0%, 100% { opacity: 0.2; transform: scale(0.7) rotate(0deg); }
+  50%      { opacity: 1; transform: scale(1.3) rotate(180deg); }
+}
+
+/* ---- 14 ANGRY ---- */
+.ef-angry-wrap {
+  animation: ef-angry-shake 0.28s ease-in-out infinite;
+  transform-origin: 60px 60px;
+}
+@keyframes ef-angry-shake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-2px); }
+  75%      { transform: translateX(2px); }
+}
+.ef-angry-wrap .ef-steam {
+  animation: ef-angry-steam 1.4s ease-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.ef-angry-wrap .ef-steam-b { animation-delay: 0.7s; }
+@keyframes ef-angry-steam {
+  0%   { opacity: 0; transform: translateY(0) scaleX(0.5); }
+  25%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-16px) scaleX(1); }
+}
+
+/* ---- 06 SEARCH ---- */
+.es-s6 .es-mag { animation: es-scan-move 3.2s ease-in-out infinite; }
+@keyframes es-scan-move {
+  0%, 100% { transform: translateX(-22px); }
+  50%      { transform: translateX(32px); }
+}
+.es-s6 .es-scanline { stroke-dasharray: 8 6; animation: es-scan-dash 1s linear infinite; }
+@keyframes es-scan-dash { to { stroke-dashoffset: -14; } }
+.es-s6 .es-res {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  animation: es-res-appear 3.2s ease-out infinite;
+}
+.es-s6 .es-res-b { animation-delay: 0.3s; }
+.es-s6 .es-res-c { animation-delay: 0.6s; }
+@keyframes es-res-appear {
+  0%, 12%  { stroke-dashoffset: 70; }
+  45%, 80% { stroke-dashoffset: 0; }
+  100%     { stroke-dashoffset: 70; }
+}
+
+/* ---- 07 UPLOAD ---- */
+.es-s7 .es-arrow {
+  animation: es-upload-rise 2s ease-in-out infinite;
+}
+@keyframes es-upload-rise {
+  0%        { transform: translateY(20px); opacity: 0; }
+  20%       { opacity: 1; }
+  70%       { transform: translateY(0); opacity: 1; }
+  90%, 100% { transform: translateY(0); opacity: 0; }
+}
+.es-s7 .es-prog {
+  animation: es-prog-blink 2s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.es-s7 .es-prog-b { animation-delay: 0.35s; }
+.es-s7 .es-prog-c { animation-delay: 0.7s; }
+@keyframes es-prog-blink {
+  0%, 100% { transform: scale(0.6); opacity: 0.3; }
+  50%      { transform: scale(1.2); opacity: 1; }
+}
+
+/* ---- 08 LOCK ---- */
+.es-s8 .es-shield {
+  animation: es-shield-ping 2.8s ease-out infinite;
+  transform-origin: 120px 88px;
+}
+@keyframes es-shield-ping {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50%      { transform: scale(1.06); opacity: 1; }
+}
+.es-s8 .es-shackle {
+  animation: es-shackle-lift 2.8s ease-in-out infinite;
+  transform-origin: 120px 92px;
+}
+@keyframes es-shackle-lift {
+  0%, 55%, 100% { transform: translateY(0); }
+  28%           { transform: translateY(-7px); }
+}
+.es-s8 .es-key-glow {
+  animation: es-key-pulse 2.8s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes es-key-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50%      { opacity: 1; transform: scale(1.2); }
+}
+
+/* ---- 09 CHART ---- */
+.es-s9 .es-bar {
+  transform-origin: center bottom;
+  transform-box: fill-box;
+  animation: es-bar-grow 2.6s ease-out infinite;
+}
+.es-s9 .es-bar-b { animation-delay: 0.2s; }
+.es-s9 .es-bar-c { animation-delay: 0.4s; }
+.es-s9 .es-bar-d { animation-delay: 0.6s; }
+@keyframes es-bar-grow {
+  0%        { transform: scaleY(0); }
+  50%, 90%  { transform: scaleY(1); }
+  100%      { transform: scaleY(0); }
+}
+.es-s9 .es-trend {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: es-trend-draw 2.6s ease-out infinite;
+  animation-delay: 0.6s;
+}
+@keyframes es-trend-draw {
+  0%, 8%   { stroke-dashoffset: 200; }
+  60%, 90% { stroke-dashoffset: 0; }
+  100%     { stroke-dashoffset: 200; }
+}
+.es-s9 .es-sparkle {
+  opacity: 0;
+  animation: es-sparkle-pop 2.6s ease-out infinite;
+  animation-delay: 1s;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes es-sparkle-pop {
+  0%, 55%   { opacity: 0; transform: scale(0.5); }
+  68%       { opacity: 1; transform: scale(1.4); }
+  88%, 100% { opacity: 0; transform: scale(1); }
+}
+
 /* ---- 04 MOCKUPS ---- */
 .es-s4 .es-blk { stroke-dasharray: 220; stroke-dashoffset: 220; animation: es-draw 4s ease-in-out infinite; }
 .es-s4 .es-blk-b { animation-delay: 0.5s; }
