@@ -1,0 +1,278 @@
+/* expressive-svgs — import once in your app */
+
+/* ---- shared ---- */
+.ef-ln {
+  fill: none;
+  stroke: var(--ef-accent, #c6f432);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ef-ln-dim {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ef-glow {
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--ef-accent, #c6f432) 45%, transparent));
+}
+
+/* ---- 01 BLINK ---- */
+.ef-blink .ef-eye {
+  animation: ef-blink var(--ef-speed, 4s) infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.ef-blink .ef-eye-r { animation-delay: 0.04s; }
+@keyframes ef-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95%           { transform: scaleY(0.12); }
+}
+.ef-float { animation: ef-float 5s ease-in-out infinite; }
+@keyframes ef-float { 50% { transform: translateY(-6px); } }
+
+/* ---- 02 SCAN ---- */
+.ef-scan .ef-pupils {
+  animation: ef-dart 3.2s ease-in-out infinite;
+}
+@keyframes ef-dart {
+  0%, 100% { transform: translateX(-6px); }
+  50%      { transform: translateX(6px); }
+}
+.ef-scan .ef-ring {
+  animation: ef-spin 14s linear infinite;
+  transform-origin: 60px 60px;
+}
+@keyframes ef-spin { to { transform: rotate(360deg); } }
+
+/* ---- 03 PULSE ---- */
+.ef-pulse-wrap {
+  animation: ef-breathe 3.4s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes ef-breathe { 50% { transform: scale(1.07); } }
+.ef-pulse-ring2 {
+  animation: ef-ripple 3.4s ease-out infinite;
+  transform-origin: 60px 60px;
+}
+@keyframes ef-ripple {
+  0%       { opacity: 0.5; transform: scale(0.7); }
+  80%, 100% { opacity: 0;   transform: scale(1.25); }
+}
+
+/* ---- 04 WINK ---- */
+.ef-wink .ef-eye-l {
+  animation: ef-wink 3.6s infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes ef-wink {
+  0%, 70%, 100% { transform: scaleY(1); }
+  80%           { transform: scaleY(0.1); }
+}
+.ef-wink-wrap {
+  animation: ef-tilt 6s ease-in-out infinite;
+  transform-origin: 60px 60px;
+}
+@keyframes ef-tilt {
+  0%, 100% { transform: rotate(-5deg); }
+  50%      { transform: rotate(5deg); }
+}
+
+/* ---- 05 SLEEPY ---- */
+.ef-sleepy-wrap { animation: ef-float 6.5s ease-in-out infinite; }
+.ef-sleepy .ef-lid {
+  animation: ef-doze 5s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes ef-doze {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(3px); }
+}
+.ef-sleepy .ef-z {
+  animation: ef-zfloat 4s ease-out infinite;
+  opacity: 0;
+}
+.ef-sleepy .ef-z-b { animation-delay: 1.3s; }
+@keyframes ef-zfloat {
+  0%        { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  30%       { opacity: 0.9; }
+  100%      { opacity: 0; transform: translate(10px, -22px) scale(1.1); }
+}
+
+/* ---- 06 SPARK ---- */
+.ef-spark .ef-orbit {
+  stroke-dasharray: 10 14;
+  animation: ef-spin 9s linear infinite;
+  transform-origin: 60px 60px;
+}
+.ef-spark .ef-mouth {
+  animation: ef-talk 1.6s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes ef-talk {
+  0%, 100% { transform: scaleY(0.6); }
+  50%      { transform: scaleY(1.15); }
+}
+
+/* ---- 07 ROBO ---- */
+.ef-robo-wrap { animation: ef-float 5s ease-in-out infinite; }
+.ef-robo .ef-ant {
+  animation: ef-antpulse 1.4s ease-in-out infinite;
+  transform-origin: 60px 22px;
+}
+@keyframes ef-antpulse { 50% { transform: scale(1.4); } }
+.ef-robo .ef-eye {
+  animation: ef-flick 2.6s steps(1) infinite;
+}
+@keyframes ef-flick {
+  0%, 46%, 54%, 100% { opacity: 1; }
+  48%, 52%           { opacity: 0.15; }
+}
+
+/* ===================== SCENES ===================== */
+
+/* ---- shared scene ---- */
+.es-ln {
+  fill: none;
+  stroke: var(--ef-accent, #c6f432);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.es-ln.es-dim, .es-dim {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.es-glow {
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--ef-accent, #c6f432) 40%, transparent));
+}
+
+/* ---- 01 TOUCH ---- */
+.es-s1 .es-trail { stroke-dasharray: 4 7; animation: es-dash 1.2s linear infinite; }
+@keyframes es-dash { to { stroke-dashoffset: -22; } }
+.es-s1 .es-plane { animation: es-fly 3.4s ease-in-out infinite; }
+@keyframes es-fly {
+  0%        { transform: translate(-10px, 18px) rotate(-8deg); opacity: 0; }
+  18%       { opacity: 1; }
+  70%       { opacity: 1; }
+  100%      { transform: translate(150px, -30px) rotate(6deg); opacity: 0; }
+}
+.es-s1 .es-at {
+  animation: es-ping 3.4s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes es-ping {
+  0%, 60%, 100% { transform: scale(1); opacity: 0.5; }
+  75%           { transform: scale(1.25); opacity: 1; }
+}
+
+/* ---- 02 CALL ---- */
+.es-s2 .es-phone { animation: es-shake 2.4s ease-in-out infinite; transform-origin: 120px 100px; }
+@keyframes es-shake { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+.es-s2 .es-wave { opacity: 0; animation: es-emit 2.2s ease-out infinite; transform-origin: 120px 85px; }
+.es-s2 .es-wave-b { animation-delay: 0.55s; }
+.es-s2 .es-wave-c { animation-delay: 1.1s; }
+@keyframes es-emit {
+  0%        { opacity: 0; transform: scale(0.4); }
+  30%       { opacity: 0.9; }
+  100%      { opacity: 0; transform: scale(1.3); }
+}
+
+/* ---- 03 DEPOSIT ---- */
+.es-s3 .es-coin { animation: es-drop 2.6s ease-in infinite; }
+@keyframes es-drop {
+  0%           { transform: translateY(-70px); opacity: 0; }
+  12%          { opacity: 1; }
+  45%, 100%    { transform: translateY(0); opacity: 1; }
+}
+.es-s3 .es-shackle { animation: es-clack 2.6s ease-out infinite; transform-origin: 120px 96px; }
+@keyframes es-clack {
+  0%, 45%  { transform: translateY(-6px); }
+  55%      { transform: translateY(0) scale(1, 0.96); }
+  60%, 100% { transform: translateY(0); }
+}
+.es-s3 .es-spark { opacity: 0; animation: es-sp 2.6s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes es-sp {
+  0%, 50%  { opacity: 0; }
+  56%      { opacity: 1; transform: scale(1.4); }
+  75%, 100% { opacity: 0; }
+}
+
+/* ---- 04 MOCKUPS ---- */
+.es-s4 .es-blk { stroke-dasharray: 220; stroke-dashoffset: 220; animation: es-draw 4s ease-in-out infinite; }
+.es-s4 .es-blk-b { animation-delay: 0.5s; }
+.es-s4 .es-blk-c { animation-delay: 1s; }
+@keyframes es-draw {
+  0%       { stroke-dashoffset: 220; }
+  40%, 70% { stroke-dashoffset: 0; }
+  100%     { stroke-dashoffset: 220; }
+}
+.es-s4 .es-cursor { animation: es-move 4s ease-in-out infinite; }
+@keyframes es-move {
+  0%   { transform: translate(0, 0); }
+  30%  { transform: translate(70px, 30px); }
+  60%  { transform: translate(30px, 55px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---- 05 ESTIMATE ---- */
+.es-s5 .es-sig { stroke-dasharray: 120; stroke-dashoffset: 120; animation: es-sign 3.6s ease-in-out infinite; }
+@keyframes es-sign {
+  0%       { stroke-dashoffset: 120; }
+  45%, 75% { stroke-dashoffset: 0; }
+  100%     { stroke-dashoffset: 120; }
+}
+.es-s5 .es-stamp { opacity: 0; animation: es-slam 3.6s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes es-slam {
+  0%, 55%  { opacity: 0; transform: scale(1.8) rotate(-12deg); }
+  65%      { opacity: 1; transform: scale(1) rotate(-12deg); }
+  90%, 100% { opacity: 1; transform: scale(1) rotate(-12deg); }
+}
+.es-s5 .es-check { stroke-dasharray: 30; stroke-dashoffset: 30; animation: es-chk 3.6s ease-out infinite; }
+@keyframes es-chk {
+  0%, 66%   { stroke-dashoffset: 30; }
+  78%, 100% { stroke-dashoffset: 0; }
+}
+
+/* ---- 08 JOY ---- */
+.ef-joy-wrap {
+  animation: ef-hop 2.4s ease-in-out infinite;
+  transform-origin: 60px 100px;
+}
+@keyframes ef-hop {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  40%      { transform: translateY(-8px) scale(0.98, 1.02); }
+  55%      { transform: translateY(0) scale(1.03, 0.97); }
+}
+
+/* ---- 09 SHIVER ---- */
+.ef-shiver-wrap {
+  animation: ef-shiver 0.18s ease-in-out infinite;
+  transform-origin: 60px 60px;
+}
+@keyframes ef-shiver {
+  0%   { transform: translateX(0) rotate(0deg); }
+  20%  { transform: translateX(-3px) rotate(-1.5deg); }
+  40%  { transform: translateX(3px) rotate(1.5deg); }
+  60%  { transform: translateX(-3px) rotate(-1deg); }
+  80%  { transform: translateX(3px) rotate(1deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+.ef-shiver-teeth {
+  animation: ef-chatter 0.36s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes ef-chatter {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
