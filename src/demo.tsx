@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
-import { Blink, Scan, Pulse, Wink, Sleepy, Spark, Robo, Joy, Shiver, Cry, Think, Cool, Dizzy, Angry } from "./index";
+import { Blink, Scan, Pulse, Wink, Sleepy, Spark, Robo, Joy, Shiver, Cry, Think, Cool, Dizzy, Angry, Laugh, Shy, Love, Surprised, Smirk, Nervous, Dead, Hype, Unamused, Sigh, Confused, Nerd, Sick, Asleep, Star, Devil, Angel, Pout, Grumpy, Zen } from "./index";
 import { Touch, Call, Deposit, Mockups, Estimate, Search, Upload, Lock, Chart } from "./index";
 
 const faces = [
@@ -19,6 +19,26 @@ const faces = [
   { name: "Cool", C: Cool },
   { name: "Dizzy", C: Dizzy },
   { name: "Angry", C: Angry },
+  { name: "Laugh", C: Laugh },
+  { name: "Shy", C: Shy },
+  { name: "Love", C: Love },
+  { name: "Surprised", C: Surprised },
+  { name: "Smirk", C: Smirk },
+  { name: "Nervous", C: Nervous },
+  { name: "Dead", C: Dead },
+  { name: "Hype", C: Hype },
+  { name: "Unamused", C: Unamused },
+  { name: "Sigh", C: Sigh },
+  { name: "Confused", C: Confused },
+  { name: "Nerd", C: Nerd },
+  { name: "Sick", C: Sick },
+  { name: "Asleep", C: Asleep },
+  { name: "Star", C: Star },
+  { name: "Devil", C: Devil },
+  { name: "Angel", C: Angel },
+  { name: "Pout", C: Pout },
+  { name: "Grumpy", C: Grumpy },
+  { name: "Zen", C: Zen },
 ] as const;
 
 const scenes = [

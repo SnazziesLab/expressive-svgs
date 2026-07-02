@@ -15,6 +15,26 @@ export { Think } from "./faces/Think";
 export { Cool } from "./faces/Cool";
 export { Dizzy } from "./faces/Dizzy";
 export { Angry } from "./faces/Angry";
+export { Laugh } from "./faces/Laugh";
+export { Shy } from "./faces/Shy";
+export { Love } from "./faces/Love";
+export { Surprised } from "./faces/Surprised";
+export { Smirk } from "./faces/Smirk";
+export { Nervous } from "./faces/Nervous";
+export { Dead } from "./faces/Dead";
+export { Hype } from "./faces/Hype";
+export { Unamused } from "./faces/Unamused";
+export { Sigh } from "./faces/Sigh";
+export { Confused } from "./faces/Confused";
+export { Nerd } from "./faces/Nerd";
+export { Sick } from "./faces/Sick";
+export { Asleep } from "./faces/Asleep";
+export { Star } from "./faces/Star";
+export { Devil } from "./faces/Devil";
+export { Angel } from "./faces/Angel";
+export { Pout } from "./faces/Pout";
+export { Grumpy } from "./faces/Grumpy";
+export { Zen } from "./faces/Zen";
 
 // Scenes — landscape process-step illustrations
 export { Touch } from "./scenes/Touch";
